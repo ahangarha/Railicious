@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
-  protected 
+  protected
 
   def permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name email password])
