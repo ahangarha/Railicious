@@ -81,3 +81,5 @@ end
 gem 'rubocop', '~> 1.30'
 
 gem 'devise'
+
+gem 'tailwindcss-rails', '~> 2.0'
