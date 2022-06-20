@@ -19,5 +19,5 @@ body {
 }
 
 .btn-secondary {
-  @apply btn border-cyan-700 hover:bg-cyan-100 border-2
+  @apply btn border-cyan-700 hover:bg-cyan-100 border-2;
 }
