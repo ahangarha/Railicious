@@ -20,7 +20,9 @@
       <td><%= food.price %></td>
       <td>
         <% if user_signed_in? && food.user == current_user %>
-        delete
+        <%= form_for( food, method: :delete) do |f| %>
+          <%= f.submit 'delete', class: 'cursor-pointer text-red-500' %>
+        <% end %>
         <% end %>
       </td>
     </tr>
