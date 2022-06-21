@@ -15,8 +15,8 @@
         <div class="border-b border-white/25 p-4 text-4xl font-thin">Railicious</div>
         <nav class="flex grow flex-col justify-between gap-4">
           <ul class="flex flex-col items-stretch justify-between">
-            <li><a href="#" class="block px-4 py-2 hover:bg-white/10">Pubic Recipies</a></li>
-            <li><a href="#" class="block px-4 py-2 hover:bg-white/10">My Recipies</a></li>
+            <li><a href="#" class="block px-4 py-2 hover:bg-white/10">Public Recipies</a></li>
+            <li><%= link_to "My Recipes", recipes_path, class:"block px-4 py-2 hover:bg-white/10" %></li>
             <li><a href="#" class="block px-4 py-2 hover:bg-white/10">About</a></li>
           </ul>
           <%= render 'devise/shared/sign_in_out' %>
