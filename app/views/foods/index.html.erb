@@ -1,4 +1,7 @@
-<h1>List of existing food items</h1>
+<div class="flex items-start w-full">
+  <h1 class="grow">List of existing food items</h1>
+  <%= link_to "New", new_food_path, class: 'btn-primary' %>
+</div>
 
 <% if @foods.blank? %>
   No food found.
