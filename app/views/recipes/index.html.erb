@@ -1,0 +1,18 @@
+<div class="flex items-center">
+  <div class="flex-1 flex justify-center">
+    <h3>All your recipes are here</h3>
+  </div>
+  <%= link_to "Create new recipe", new_recipe_path  %>
+</div>
+<div class="container text-center">
+  <p class="danger"> <%= "No Recipes for you" if @recipes.length == 0 %></p>
+  <% @recipes.each_with_index do |recipe, i| %>
+    <div class="each-recipe flex flex-row gap-x-10 justify-between border-2 border-black px-4">
+      <div class="recipe-main flex flex-col gap-y-2 items-center">
+        <h4> <%= link_to "#{recipe.name}", recipe_path(recipe.id), style:"text-decoration:none" %> </h4>
+        <%= button_to "Delete", recipe_path(recipe.id), method: :delete, class:"border-2 border-black p-1 mb-1" %>
+      </div>
+      <p  class="font-semibold flex-1 flex justify-start "> <%= recipe.description %> </p>
+    </div>
+  <% end %>
+</div>
