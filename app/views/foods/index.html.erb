@@ -1,0 +1,29 @@
+<h1>List of existing food items</h1>
+
+<% if @foods.blank? %>
+  No food found.
+  <% return %>
+<% end %>
+
+<table>
+  <thead>
+    <th>Food</th>
+    <th>Unit</th>
+    <th>Price</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.measurement_unit %></td>
+      <td><%= food.price %></td>
+      <td>
+        <% if user_signed_in? && food.user == current_user %>
+        delete
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
