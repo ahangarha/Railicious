@@ -6,9 +6,8 @@ class RecipesController < ApplicationController
   end
 
   def show
-      
-    if current_user != Recipe.find(params[:id]).user 
-      flash[:notice] ="You are not authorized to access this page"
+    if current_user != Recipe.find(params[:id]).user
+      flash[:notice] = 'You are not authorized to access this page'
       redirect_to recipes_path
     end
     @recipe = Recipe.find(params[:id])
@@ -34,10 +33,10 @@ class RecipesController < ApplicationController
 
     flash[:success] = 'Recipe deleted successfully'
     redirect_to recipes_path
-
   end
 
   private
+
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
