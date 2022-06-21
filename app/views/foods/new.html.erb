@@ -1,6 +1,6 @@
 <h1>Add new food item</h1>
 
-<%= form_with(model: Food.new, url: foods_path, method: :post, class: 'flex flex-col gap-2') do |f| %>
+<%= form_with(model: @food, url: foods_path, method: :post, class: 'flex flex-col gap-2') do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: 'name' %>

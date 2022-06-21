@@ -5,6 +5,10 @@ class FoodsController < ApplicationController
     @foods = Food.all
   end
 
+  def new
+    @food = Food.new
+  end
+
   def create
     new_food = Food.new(params.require(:food).permit(:name, :measurement_unit, :price))
     new_food.user = current_user
