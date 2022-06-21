@@ -1,1 +1,13 @@
-<h3>All your recipes are here</h3>
+<h3 class="text-center">All your recipes are here</h3>
+<div class="container text-center">
+  <p class="danger"> <%= "No Recipes for you" if @recipes.length == 0 %></p>
+  <% @recipes.each_with_index do |recipe, i| %>
+    <div class="each-recipe flex flex-row gap-x-6 justify-center border-2 border-black">
+      <div class="recipe-main flex flex-col gap-y-2">
+        <h4> <%= link_to "Recipe #{i+1}", recipe_path(recipe.id), style:"text-decoration:none" %> </h4>
+        <%= button_to "Delete", recipe_path(recipe.id), method: :delete, class:"border-2 border-black p-1 mb-1" %>
+      </div>
+      <p class="font-semibold"> <%= recipe.description %> </p>
+    </div>
+  <% end %>
+</div>
