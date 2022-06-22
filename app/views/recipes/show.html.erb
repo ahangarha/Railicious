@@ -7,7 +7,7 @@
         <span>Public</span>
         <div class="flex justify-center">
           <div class="form-check form-switch">
-            <input class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-white bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm" type="checkbox" role="switch" id="flexSwitchCheckDefault" <%= "checked" if @recipe.public %> disabled >
+            <input class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm" type="checkbox" role="switch" id="flexSwitchCheckDefault" <%= "checked" if @recipe.public %> disabled >
           </div>
         </div>
       </div>
@@ -37,19 +37,19 @@
 <table>
   <thead>
     <th>Food</th>
-    <th>Unit</th>
-    <th>Price</th>
+    <th>Quantity</th>
+    <th>Value</th>
     <th>Action</th>
   </thead>
   <tbody>
-    <% @recipe.foods.each do |food| %>
+    <% @recipe.recipe_foods.each do |rf| %>
     <tr>
-      <td><%= food.name %></td>
-      <td><%= food.measurement_unit %></td>
-      <td><%= food.price %></td>
+      <td><%= rf.food.name %></td>
+      <td><%= "#{rf.quantity} #{rf.food.measurement_unit}" %></td>
+      <td><%= "$ #{rf.quantity * rf.food.price}" %></td>
       <td>
-        <% if user_signed_in? && food.user == current_user %>
-        <%= form_with(model: RecipeFood.new, url: recipe_recipe_food_path(@recipe, food) , method: :delete) do |f| %>
+        <% if user_signed_in? && rf.food.user == current_user %>
+        <%= form_with(model: RecipeFood.new, url: recipe_recipe_food_path(@recipe, rf) , method: :delete) do |f| %>
           <%= f.submit 'delete', class: 'cursor-pointer text-red-500' %>
         <% end %>
         <% end %>
