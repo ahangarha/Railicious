@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    if current_user != Recipe.find(params[:id]).user
+    if current_user != Recipe.find(params[:id]).user && !Recipe.find(params[:id]).public
       flash[:notice] = 'You are not authorized to access this page'
       redirect_to recipes_path
     end
