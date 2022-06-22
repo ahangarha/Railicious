@@ -8,8 +8,8 @@
         <h4>By: <%= recipe.user.name %> </h4>
       </div>
       <div class="flex flex-col ">
-        <p> <%= "Total food items: " %> </p>
-        <p> <%= "Total price: " %> </p>
+        <p>Total food items: <%= recipe.foods.count %> </p>
+        <p>Total price: <%= recipe.recipe_foods.reduce(0) { |sum, rf| sum + rf.quantity * rf.food.price } %> </p>
       </div>
     </div>
   <% end %>
