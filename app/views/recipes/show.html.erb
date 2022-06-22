@@ -16,3 +16,47 @@
   <p class="font-semibold">Cooking time: <%= @recipe.cooking_time %> minutes</p>
   <p> <%= @recipe.description %> </p>
 </div>
+
+<h2 class="border-t my-4 py-4 text-center">List of ingredients for this recipe</h2>
+
+<%= form_with(
+  model:RecipeFood.new,
+  url: recipe_recipe_foods_path(@recipe),
+  method: :post,
+  class: 'flex items-center justify-center gap-4'
+  ) do |f| %>
+  <%= f.collection_select :food_id, @recipe.user.foods, :id, :name %>
+  <%= f.number_field :quantity, placeholder: 'Quantity', min: 0, step:0.01 %>
+  <%= f.submit 'Add', class: 'btn-primary' %>
+<% end %>
+
+<% if @recipe.foods.blank? %>
+  <p class="text-center">No items found!</p>
+<% else %>
+
+<table>
+  <thead>
+    <th>Food</th>
+    <th>Unit</th>
+    <th>Price</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <% @recipe.foods.each do |food| %>
+    <tr>
+      <td><%= food.name %></td>
+      <td><%= food.measurement_unit %></td>
+      <td><%= food.price %></td>
+      <td>
+        <% if user_signed_in? && food.user == current_user %>
+        <%= form_with(model: RecipeFood.new, url: recipe_recipe_food_path(@recipe, food) , method: :delete) do |f| %>
+          <%= f.submit 'delete', class: 'cursor-pointer text-red-500' %>
+        <% end %>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% end %>
