@@ -1,24 +1,53 @@
-# README
+# Railicious
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railicious is a recipe application where you can store your recipes and share your recipes publicly if you want. Users can register to add recipes and login to view their private recipes.Publicly available recipes can be accessed right from the home page without logging in.
 
-Things you may want to cover:
+## Built with
 
-* Ruby version
+- Ruby on Rails
+- PostgreSQL
+- Tailwind CSS
+- HTML
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+- You need Ruby V3+, Rails V7+ and Postgresql installed on your machine.
 
-* Database creation
+## Setup
 
-* Database initialization
+- Clone the Github Repository
+- Go to the Project Directory
+- Run bundle install
+- If you are on windows, you might need to run `rails tailwindcss:watch` to precompile tailwindcss
 
-* How to run the test suite
+### Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+- Run `rails server` to start the server and start the application.
 
-* Deployment instructions
+## Author
 
-* ...
+👤 **Muneeb Ul Rehman**
+
+- GitHub: [@Muneeb](https://github.com/muneebulrehman)
+- Twitter: [@NeatCoder\_](https://twitter.com/NeatCoder_)
+- LinkedIn: [Muneeb](https://www.linkedin.com/in/muneebulrehman/)
+
+👤 **Mostafa Ahangarha**
+
+- GitHub: [@Mostafa](https://github.com/ahangarha)
+- Twitter: [ahangarha](https://twitter.com/ahangarha)
+- LinkedIn: [Mostafa](https://www.linkedin.com/in/ahangarha/)
+
+## Contributions
+
+Contributions, issues, and feature requests are welcome!
+
+- Feel free to check the [issues page](https://github.com/ahangarha/Railicious/issues).
+
+### Acknowledgments
+
+- Microverse
+
+### 📝 License
+
+This project is MIT licensed.
