@@ -1,16 +1,22 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:public, :show]
+  before_action :authenticate_user!, except: %i[public show]
 
   def index
     @recipes = Recipe.where(user_id: current_user.id)
   end
 
   def show
-    return set_recipe if set_recipe.public
-    return set_recipe if current_user == set_recipe.user
-    if set_recipe.public == false  && (current_user != set_recipe.user || user_signed_in?)
-      flash[:error] = "You are not authorized to access this page"
-      redirect_to root_path
+    @recipe = Recipe.find(params[:id])
+    if !@recipe.public && current_user != @recipe.user
+      if user_signed_in?
+        flash[:notice] = 'You are not authorized to access this page'
+        redirect_to recipes_path
+      else
+        flash[:notice] = 'You must be logged in to access this page'
+        redirect_to new_user_session_path
+      end
+    else
+      @recipe
     end
   end
 
