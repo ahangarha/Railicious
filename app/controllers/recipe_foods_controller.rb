@@ -11,10 +11,14 @@ class RecipeFoodsController < ApplicationController
   end
 
   def destroy
-    recipe = Recipe.includes(:foods).find(params[:recipe_id])
-    food = recipe.foods.find(params[:id])
+    recipe_food = RecipeFood.includes(:recipe).find(params[:id])
 
-    if RecipeFood.where(recipe:, food:).destroy_all
+    recipe = recipe_food.recipe
+    # food = recipe.foods.find(params[:id])
+
+    # puts '#'*80
+    # puts recipe_food
+    if recipe_food.destroy!
       flash['notice'] = 'Food item removed from recipe successfully'
       redirect_to recipe_path(recipe)
     else
