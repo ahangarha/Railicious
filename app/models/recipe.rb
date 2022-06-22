@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true
 
-  def public_recipes
+  def self.public_recipes
     @recipes = Recipe.where(public: true)
   end
 end
