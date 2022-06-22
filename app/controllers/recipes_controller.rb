@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
   end
 
   def public
-    @recipes = Recipe.public_recipes()
+    @recipes = Recipe.public_recipes
   end
 
   private
