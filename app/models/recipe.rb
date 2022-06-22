@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
 
   validates :name, presence: true
 
-  def public_recipes
-    @recipes = Recipe.where(public: true)
+  def self.public_recipes
+    @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 end

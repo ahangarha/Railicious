@@ -1,0 +1,16 @@
+<h1>Browse public recipes</h1>
+<div class="container">
+  <p class="danger"> <%= "No Publicly available recipes at this moment" if @recipes.length == 0 %></p>
+  <% @recipes.each do |recipe| %>
+    <div class="each-recipe flex flex-row justify-between border-2 border-black px-4">
+      <div class="recipe-main flex flex-col">
+        <h4> <%= link_to "#{recipe.name}", recipe_path(recipe.id), style:"text-decoration:none" %> </h4>
+        <h4>By: <%= recipe.user.name %> </h4>
+      </div>
+      <div class="flex flex-col ">
+        <p> <%= "Total food items: " %> </p>
+        <p> <%= "Total price: " %> </p>
+      </div>
+    </div>
+  <% end %>
+</div>
