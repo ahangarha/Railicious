@@ -1,16 +1,17 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:public, :show]
 
   def index
     @recipes = Recipe.where(user_id: current_user.id)
   end
 
   def show
-    if current_user != Recipe.find(params[:id]).user && !Recipe.find(params[:id]).public
-      flash[:notice] = 'You are not authorized to access this page'
-      redirect_to recipes_path
+    return set_recipe if set_recipe.public
+    return set_recipe if current_user == set_recipe.user
+    if set_recipe.public == false  && (current_user != set_recipe.user || user_signed_in?)
+      flash[:error] = "You are not authorized to access this page"
+      redirect_to root_path
     end
-    @recipe = Recipe.find(params[:id])
   end
 
   def new
@@ -40,6 +41,10 @@ class RecipesController < ApplicationController
   end
 
   private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
