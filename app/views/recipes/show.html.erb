@@ -50,7 +50,7 @@
       <td><%= "#{rf.quantity} #{rf.food.measurement_unit}" %></td>
       <td><%= "$ #{rf.quantity * rf.food.price}" %></td>
       <td>
-        <% if user_signed_in? && rf.food.user == current_user %>
+        <% if user_signed_in? && rf.recipe.user == current_user %>
         <%= form_with(model: RecipeFood.new, url: recipe_recipe_food_path(@recipe, rf) , method: :delete) do |f| %>
           <%= f.submit 'delete', class: 'cursor-pointer text-red-500' %>
         <% end %>
