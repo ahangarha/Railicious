@@ -1,0 +1,17 @@
+<h1 class= "text-center">Shopping List</h1>
+<table>
+  <thead>
+    <th>Food</th>
+    <th>Unit</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    <% @filtered_food.each do |food| %>
+      <tr>
+        <td><%= food.name %></td>
+        <td><%= food.measurement_unit %></td>
+        <td><%= food.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
