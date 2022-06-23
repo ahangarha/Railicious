@@ -23,9 +23,9 @@ body {
 }
 
 .alert {
-  @apply bg-red-300
+  @apply bg-red-300;
 }
 
 .notice {
-  @apply bg-green-300
+  @apply bg-green-300;
 }
