@@ -18,6 +18,7 @@ Railicious is a recipe application where you can store your recipes and share yo
 - Clone the Github Repository
 - Go to the Project Directory
 - Run bundle install
+- Create a `.env` file and copy the content for `.env.example` file. Assign the values to admin and password according to your DB credentials.
 - If you are on windows, you might need to run `rails tailwindcss:watch` to precompile tailwindcss
 
 ### Usage
