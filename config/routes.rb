@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :foods, only: [:index, :new, :create, :destroy]
+  get '/shopping_list', to: 'shopping_list#index' 
 
   # Defines the root path route ("/")
   get '/public_recipes', to: 'recipes#public'
