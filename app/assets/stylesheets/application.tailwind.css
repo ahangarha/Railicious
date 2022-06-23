@@ -21,3 +21,11 @@ body {
 .btn-secondary {
   @apply btn border-cyan-700 hover:bg-cyan-100 border-2;
 }
+
+.alert {
+  @apply bg-red-300;
+}
+
+.notice {
+  @apply bg-green-300;
+}

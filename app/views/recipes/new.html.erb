@@ -1,5 +1,5 @@
 <h3>Create a new recipe</h3>
-<%= form_with model: @recipe, url: recipes_path, method: :post, local: true do |f| %>
+<%= form_with model: @recipe, url: recipes_path, method: :post, local: true, class: 'flex flex-col gap-2' do |f| %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, :required => "required", autofocus: true, autocomplete: "name" %>
@@ -17,8 +17,8 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :public %><br />
     <%= f.check_box :public, default:false %>
+    <%= f.label :public %>
   </div>
   <div class="actions">
     <%= f.submit "Create Recipe", class: 'btn-primary' %>

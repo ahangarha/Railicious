@@ -1,8 +1,8 @@
 class FoodsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!
 
   def index
-    @foods = Food.includes(:user).all
+    @foods = Food.includes(:user).where(user: current_user)
   end
 
   def new
