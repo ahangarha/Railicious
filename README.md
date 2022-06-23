@@ -30,17 +30,17 @@ Railicious is a recipe application where you can store your recipes and share yo
 
 ## Author
 
-👤 **Muneeb Ul Rehman**
-
-- GitHub: [@Muneeb](https://github.com/muneebulrehman)
-- Twitter: [@NeatCoder\_](https://twitter.com/NeatCoder_)
-- LinkedIn: [Muneeb](https://www.linkedin.com/in/muneebulrehman/)
-
 👤 **Mostafa Ahangarha**
 
 - GitHub: [@Mostafa](https://github.com/ahangarha)
 - Twitter: [ahangarha](https://twitter.com/ahangarha)
 - LinkedIn: [Mostafa](https://www.linkedin.com/in/ahangarha/)
+
+👤 **Muneeb Ul Rehman**
+
+- GitHub: [@Muneeb](https://github.com/muneebulrehman)
+- Twitter: [@NeatCoder\_](https://twitter.com/NeatCoder_)
+- LinkedIn: [Muneeb](https://www.linkedin.com/in/muneebulrehman/)
 
 ## Contributions
 
