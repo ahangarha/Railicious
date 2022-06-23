@@ -1,13 +1,15 @@
 # Railicious
 
-Railicious is a recipe application where you can store your recipes and share your recipes publicly if you want. Users can register to add recipes and login to view their private recipes.Publicly available recipes can be accessed right from the home page without logging in.
+Railicious is a recipe application where you can store your recipes and share your recipes publicly if you want. Users can register to add recipes and login to view their private recipes. Publicly available recipes can be accessed right from the home page without logging in.
+
+![screenshot](./Railicious-screencast01.gif)
 
 ## Built with
 
 - Ruby on Rails
 - PostgreSQL
 - Tailwind CSS
-- HTML
+- HTML5
 
 ### Prerequisites
 
@@ -18,8 +20,9 @@ Railicious is a recipe application where you can store your recipes and share yo
 - Clone the Github Repository
 - Go to the Project Directory
 - Run bundle install
-- Create a `.env` file and copy the content for `.env.example` file. Assign the values to admin and password according to your DB credentials.
+- Create a `.env` file and copy the content from `.env.example` file. Assign the values to username and password according to your DB credentials.
 - If you are on windows, you might need to run `rails tailwindcss:watch` to precompile tailwindcss
+- If you are on linux, you need to run `./bin/dev`
 
 ### Usage
 
