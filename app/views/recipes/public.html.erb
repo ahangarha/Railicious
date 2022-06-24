@@ -1,0 +1,27 @@
+<h1>Browse public recipes</h1>
+<div class="flex flex-col gap-4 not-prose">
+  <% if @recipes.blank? %>
+  <p>No Publicly available recipes at this moment</p>
+  <% end %>
+
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe.id), class: "grid grid-cols-4 place-content-center rounded-lg border bg-gray-50 p-4 shadow hover:shadow-lg" do %>
+      <div class="col-span-2 flex flex-col justify-center">
+        <h2 class="text-3xl font-semibold"><%= recipe.name %></h2>
+        <p>By: <%= recipe.user.name %></p>
+      </div>
+      <div class="flex flex-col gap-2 text-center">
+        <div class="text-4xl font-thin">
+          <%= recipe.foods.count %>
+        </div>
+        <div>Foot items</div>
+      </div>
+      <div class="flex flex-col gap-2 text-center">
+        <div class="text-4xl font-thin">
+          <%= recipe.recipe_foods.reduce(0) { |sum, rf| sum + rf.quantity * rf.food.price } %>
+        </div>
+        <div>Total price</div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

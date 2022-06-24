@@ -1,0 +1,25 @@
+<h1 class= "text-center">General Shopping List</h1>
+
+<p>Total number of foods: <%= @filtered_food.count %></p>
+<p>Total price: <%= @total_price %></p>
+
+<% if @filtered_food.blank? %>
+  <p>No items found!</p>
+<% else %>
+  <table>
+    <thead>
+      <th>Food</th>
+      <th>Unit</th>
+      <th>Price</th>
+    </thead>
+    <tbody>
+      <% @filtered_food.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td><%= food.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
