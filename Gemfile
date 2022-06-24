@@ -58,6 +58,8 @@ group :development, :test do
 
   # To load environment variabales from .env file
   gem 'dotenv-rails'
+
+  gem 'rspec-rails', '~> 6.0.0.rc1'
 end
 
 group :development do
