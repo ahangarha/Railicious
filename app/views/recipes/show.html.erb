@@ -53,7 +53,7 @@
       <td>
         <% if user_signed_in? && rf.recipe.user == current_user %>
         <%= form_with(model: RecipeFood.new, url: recipe_recipe_food_path(@recipe, rf) , method: :delete) do |f| %>
-          <%= f.submit 'delete', class: 'cursor-pointer text-red-500' %>
+          <%= f.submit 'Delete', class: 'cursor-pointer text-red-500' %>
         <% end %>
         <% end %>
       </td>
