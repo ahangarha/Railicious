@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe "The foods page", type: :feature do
+describe 'The foods page', type: :feature do
   before :each do
-    user = User.create!(name: 'Ali', email: 'ali@example.com', password: '123456')
+    User.create!(name: 'Ali', email: 'ali@example.com', password: '123456')
 
     visit new_user_session_path
     fill_in 'Email', with: 'ali@example.com'
@@ -10,12 +10,12 @@ describe "The foods page", type: :feature do
     click_button 'Log in'
   end
 
-  it "shows no food before adding any" do
+  it 'shows no food before adding any' do
     visit '/foods'
     expect(page).to have_content 'No food found'
   end
 
-  it "shows new food after adding it" do
+  it 'shows new food after adding it' do
     visit '/foods'
     click_link 'New'
     fill_in 'Name', with: 'Potato'
