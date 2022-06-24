@@ -1,4 +1,4 @@
-class ShoppingListController < ApplicationController
+class GeneralShoppingListController < ApplicationController
   before_action :authenticate_user!
 
   def index

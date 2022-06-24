@@ -15,6 +15,7 @@
   </div>
   <p class="font-semibold">Cooking time: <%= @recipe.cooking_time %> minutes</p>
   <p> <%= @recipe.description %> </p>
+  <%= link_to "Shopping List", general_shopping_list_path, class: 'btn-primary' %>
 </div>
 
 <h3 class="border-t my-4 py-4 text-center">List of ingredients for this recipe</h3>
