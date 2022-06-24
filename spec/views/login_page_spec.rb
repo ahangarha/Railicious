@@ -30,7 +30,7 @@ RSpec.describe 'LoginPage', type: :system do
   the password with correct data, I am redirected to the root page.' do
     user = User.create(name: 'spiderman',
                        email: 'spiderman@gmail.com',
-                       password: 'password', password_confirmation: 'password',)
+                       password: 'password', password_confirmation: 'password')
     user.save
     within('#new_user') do
       fill_in 'Email', with: 'spiderman@gmail.com'

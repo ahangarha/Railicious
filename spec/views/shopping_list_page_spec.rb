@@ -7,7 +7,8 @@ RSpec.describe 'Posts index page', type: :system do
                         email: 'admin@email.com',
                         password: 'password', password_confirmation: 'password')
     @user.save
-    @recipe = Recipe.create(user_id: @user.id, name: 'Recipe 1', preparation_time: 10, cooking_time: 20, description: 'This is test recipe and it is very delicious', public: true )
+    @recipe = Recipe.create(user_id: @user.id, name: 'Recipe 1', preparation_time: 10, cooking_time: 20,
+                            description: 'This is test recipe and it is very delicious', public: true)
     visit 'users/sign_in'
     within('#new_user') do
       fill_in 'Email', with: 'admin@email.com'
