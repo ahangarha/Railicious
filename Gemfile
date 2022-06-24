@@ -58,6 +58,7 @@ group :development, :test do
 
   # To load environment variabales from .env file
   gem 'dotenv-rails'
+  gem 'rspec-rails', '~> 6.0.0.rc1'
 end
 
 group :development do
@@ -85,3 +86,5 @@ gem 'rubocop', '~> 1.30'
 gem 'devise'
 
 gem 'tailwindcss-rails', '~> 2.0'
+
+gem 'ffi', '~> 1.9', '>= 1.9.10'
