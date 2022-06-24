@@ -22,7 +22,7 @@
       <td>
         <% if user_signed_in? && food.user == current_user %>
         <%= form_for( food, method: :delete) do |f| %>
-          <%= f.submit 'delete', class: 'cursor-pointer text-red-500' %>
+          <%= f.submit 'Delete', class: 'cursor-pointer text-red-500' %>
         <% end %>
         <% end %>
       </td>
